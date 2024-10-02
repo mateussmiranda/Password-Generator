@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Gerador de senhas, gerador password, Password Generator">
     <title>Password Generator</title>
 
-<link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="stile.css">
 </head>
+
 <body>
-   
+
     <img class="logo" src="./assets/logo.png" alt="Password Generator logo" />
 
-<main class="container-input">
-<span>Tamanho <span id="valor"></span> caracteres </span>
-<input id="slider" class="slider" type="range" min="4" max="25" value="15"/>
-</main>
+    <main class="container-input">
+        <span>Tamanho <span id="valor"></span> Caracteres </span>
+        <input id="slider" class="slider" type="range" min="4" max="25" value="15" />
 
-   <script src="script.js"></script> 
+        <button id="button" class="button-cta">Gerar Senha</button>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
