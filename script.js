@@ -17,10 +17,21 @@ sizeNumber.innerHTML = sliderNumber.value;
 
 sliderElement.oninput = function () {
     sizePassword.innerHTML = this.value;
+
+    if (sliderNumber.value > sliderElement.value) {
+        sliderNumber.value = sliderElement.value;
+        sliderNumber.innerHTML = sliderNumber.value;
+        alert("A quantidade de números não pode ser maior que a quantidade de caracteres!")
+    }
 }
 
 sliderNumber.oninput = function () {
-    sizeNumber.innerHTML = this.value;
+
+    if (sliderNumber.value > sliderElement.value) {
+        sliderNumber.value = sliderElement.value;
+        alert("A quantidade de números não pode ser maior que a quantidade de caracteres!")
+    }
+    sizeNumber.innerHTML = sliderNumber.value;
 }
 
 function generatePassword() {
@@ -29,12 +40,16 @@ function generatePassword() {
     let numPass = "";
     let n = charset.length;
 
+    if (sliderNumber.value > sliderElement.value) {
+        sliderNumber.value = sliderElement.value;
+    }
+
     // Gera a parte com números
     for (let i = 0; i < sliderNumber.value; ++i) {
         numPass += numbers.charAt(Math.floor(Math.random() * numbers.length));
     }
 
-    // Gera a parte sem números, respeitando o tamnho total - quantidade de números.
+    // Gera a parte sem números, respeitando o tamanho total - quantidade de números.
     for (let i = 0; i < sliderElement.value - sliderNumber.value; i++) {
         pass += charset.charAt(Math.floor(Math.random() * n));
     }
